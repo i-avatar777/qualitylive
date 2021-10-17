@@ -12,6 +12,6 @@ jobs:
     steps:
     
     - name: Install Dependencies
-      run: ssh ${{ env.USERNAME }}@${{ env.IP_HOST }} 'cd ${{ env.PATH }}; git pull'
+      run: ssh ${{ secrets.USERNAME }}@${{ secrets.IP_HOST }} 'cd ${{ secrets.PATH }}; git pull'
     - name: Install Dependencies
-      run: ssh ${{ env.USERNAME }}@${{ env.IP_HOST }} 'sudo docker exec i-am-avatar-php-fpm php yii migrate --interactive=0'
+      run: ssh ${{ secrets.USERNAME }}@${{ secrets.IP_HOST }} 'sudo docker exec i-am-avatar-php-fpm php yii migrate --interactive=0'

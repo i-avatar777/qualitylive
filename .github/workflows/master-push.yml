@@ -11,8 +11,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     
-    - name: update
-      run: apt-get update && apt-get install -y ssh
     - name: Install Dependencies
       run: ssh ${{ env.USERNAME }}@${{ env.IP_HOST }} 'cd ${{ env.PATH }}; git pull'
     - name: Install Dependencies

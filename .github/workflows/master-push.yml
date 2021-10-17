@@ -13,4 +13,6 @@ jobs:
     
     - name: Install Dependencies
       run: echo ${{ secrets.USERNAME }}
+    - name: Install Dependencies
+      run: echo ${{ env.USERNAME }}
     

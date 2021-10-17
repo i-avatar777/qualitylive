@@ -12,7 +12,7 @@ jobs:
     steps:
     
     - name: Install Dependencies
-      run: echo ${{ secrets.USERNAME }}
+      run: echo ${{ secrets.USER }}
     - name: Install Dependencies
-      run: echo ${{ env.USERNAME }}
+      run: echo ${{ env.USER }}
     

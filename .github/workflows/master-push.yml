@@ -1,0 +1,19 @@
+name: Symfony
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  deploy:
+    runs-on: phpdockerio/php80-fpm:latest
+    steps:
+    
+    - name: update
+      run: apt-get update && apt-get install -y ssh
+    - name: Install Dependencies
+      run: ssh $USERNAME@$IP_HOST 'cd $PATH; git pull'
+    - name: Install Dependencies
+      run: ssh $USERNAME@$IP_HOST 'sudo docker exec i-am-avatar-php-fpm php yii migrate --interactive=0'
